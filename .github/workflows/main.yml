@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout Repo
         uses: actions/checkout@v3
 
       - name: Setup Python
@@ -21,10 +21,11 @@ jobs:
         with:
           python-version: '3.12.3'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: |
           pip install -r requirements.txt
 
-      - name: Jalankan preprocessing
+      - name: Run Preprocessing
+        working-directory: ./preprocessing
         run: |
           python automate_Duma-Mora-Arta-Sitorus.py
